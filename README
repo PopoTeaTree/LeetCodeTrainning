@@ -1,0 +1,2 @@
+How to run by nodemon 
+npx nodemon ./main.ts
