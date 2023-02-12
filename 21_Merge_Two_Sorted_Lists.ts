@@ -71,14 +71,22 @@ function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode
     return null;
 };
 
-function mergeLists(list1: ListNode | null, list2: ListNode | null, resultList: ListNode | null ): ListNode | null {
+function mergeLists(list1: ListNode | null, list2: ListNode | null, resultList: ListNode ): ListNode | null {
     // Checking to end the reult
-    // if (list1?.val === null) {
-    //     resultList.next = list2
-    // }
-    // if (list2?.val === null ) {
-    //     resultList?.next = list1
-    // }
-    console
-    return resultList;
+    if (list1?.val === null) {
+        resultList.next = list2
+        return resultList
+    }
+    if (list2?.val === null ) {
+        resultList?.next = list1
+        return resultList
+    }
+    // Checking for recursive looping for the next result
+    if (list1?.val > list2?.val) {
+        resultList?.val = list2?.val;
+        mergeLists(list1, list2?.next, resultList)
+    }
+    else {
+    }
+    console.log("Hello world I come back again jaaaa ");
 }
